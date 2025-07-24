@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "5fdd5e61-ebd9-4752-925b-ced6471ab11f",
+		"name": "Tech Test FrontEnd Dev - BackEnd API",
+		"description": "Bismillah Success With Allah. API yang dibutuhkan untuk Technical Test Frontend Developer.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18842495"
+	},
+	"item": [
+		{
+			"name": "Gerbang",
+			"item": [
+				{
+					"name": "Get Gerbang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gerbangs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gerbangs"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "IdCabang",
+									"value": "16",
+									"disabled": true
+								},
+								{
+									"key": "NamaCabang",
+									"value": "Cilacap",
+									"disabled": true
+								},
+								{
+									"key": "NamaGerbang",
+									"value": "Cilacap",
+									"disabled": true
+								}
+							]
+						},
+						"description": "API ini untuk mendapatkan data gerbang. Terdapat beberapa filter yang dilakukan yaitu :\n\n- filter data gerbang dengan memasukkan parameter id (id gerbang) dan IdCabang beserta valuenya\n- filter berdasarkan nama gerbang dengan memasukkan parameter NamaGerbang beserta valuenya\n- filter berdasarkan nama cabang dengan memasukkan parameter NamaCabang beserta valuenya"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Data Gerbang",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"IdCabang\":16,\r\n    \"NamaGerbang\": \"Kebumen2\",\r\n    \"NamaCabang\":\"Gedebage Cilacap\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/gerbangs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gerbangs"
+							]
+						},
+						"description": "API ini untuk create data gerbang.\n\nBerikut ketentuan untuk data body yang akan dikirimkan:\n\n1. id (PK) : int (id gerbang)\n2. IdCabang : int (id cabang / ruas)\n3. NamaGerbang : var (Nama gerbang)\n4. NamaCabang : var (Nama cabang/ruas)\n    \n\nNote : ruas_id dan gerbang_id harus berkombinasi sebagai primary key"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Gerbang",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"IdCabang\":16,\r\n    \"NamaGerbang\": \"Kebumen3\",\r\n    \"NamaCabang\":\"Gedebage Cilacap\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/gerbangs/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gerbangs",
+								""
+							]
+						},
+						"description": "API ini untuk update data gerbang.\n\nBerikut ketentuan untuk data body yang akan dikirimkan:\n\n1. id (PK) : int (id gerbang)\n2. IdCabang : int (id cabang / ruas)\n3. NamaGerbang : var (Nama gerbang)\n4. NamaCabang : var (Nama cabang/ruas)\n    \n\nNote : ruas_id dan gerbang_id harus berkombinasi sebagai primary key"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Gerbang",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"IdCabang\":16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/gerbangs/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gerbangs",
+								""
+							]
+						},
+						"description": "API ini untuk delete data gerbang. Dimana endpoint delete ini membutuhkan data id dan Id cabang sebagai identifier data yang akan dihapus. Data tersebut dikirimkan melalui body.\n\nBerikut ketentuan untuk data body yang akan dikirimkan:\n\n1. id (PK) : int (id gerbang)\n2. IdCabang (PK) : int (id cabang/ruas)"
+					},
+					"response": []
+				}
+			],
+			"description": "API untuk melakukan CRUD data Gerbang. Terdapat 4 data yang perlu diperhatikan yaitu:\n\n- id : id gerbang\n    \n- IdCabang : Id cabang (ruas)\n    \n- NamaGerbang : Nama gerbang\n    \n- NamaCabang : Nama cabang (ruas)"
+		},
+		{
+			"name": "Lalin",
+			"item": [
+				{
+					"name": "Get Data Lalin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/lalins?tanggal=2023-11-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lalins"
+							],
+							"query": [
+								{
+									"key": "tanggal",
+									"value": "2023-11-01"
+								}
+							]
+						},
+						"description": "API ini untuk mendapatkan data lalin. Terdapat beberapa filter yang dilakukan yaitu :\n\n- filter data lalin berdasarkan tanggal dengan memasukkan parameter tanggal beserta valuenya"
+					},
+					"response": []
+				}
+			],
+			"description": "API untuk mendapatkan data lalu lintas (lalin)"
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Super Admin\",\r\n    \"password\": \"password12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Untuk login dibutuhkan 2 data yaitu:\n\n- username (varchar)\n- password (varchar)"
+					},
+					"response": []
+				}
+			],
+			"description": "API ini berfungsi untuk autentikasi pengguna."
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				},
+				"description": "API ini untuk mengakses halaman home."
+			},
+			"response": []
+		}
+	]
+}
